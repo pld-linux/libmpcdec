@@ -51,8 +51,7 @@ Statycznie zlinkowana wersja biblioteki libmpcdec.
 %package examples
 Summary:	Example of using libmpcdec with documentation
 Summary(pl):	Przyk³ad u¿ycia libmpcdec z dokumentacj±
-# Which group should be used?
-Group:		Examples
+Group:		Documentation
 
 %description examples
 Example of using libmpcdec with documentation.
@@ -64,7 +63,7 @@ Przyk³ad u¿ycia libmpcdec z dokumentacj±.
 %setup -q
 
 %build
-%{?debug:%{__sed} -i -e "s,-O3,,g" configure.ac}
+%{?debug:%{__sed} -i -e "s,-O3 -fomit-frame-pointer,,g" configure.ac}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
