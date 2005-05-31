@@ -39,6 +39,7 @@ Summary:	Header files for libmpcdec
 Summary(pl):	Pliki nag³ówkowe do biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	libmusepack-devel
 
 %description devel
 Header files for libmpcdec.
@@ -51,6 +52,7 @@ Summary:	Static version of the libmpcdec library
 Summary(pl):	Statyczna wersja biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+Obsoletes:	libmusepack-static
 
 %description static
 Static version of the libmpcdec library.
