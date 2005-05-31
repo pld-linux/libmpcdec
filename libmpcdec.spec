@@ -7,7 +7,7 @@ License:	BSD
 Group:		Libraries
 Source0:	http://musepack.origean.net/files/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	f8465cc807c4d8acca6da250fd4ca9b0
-URL:		http://www.musepack.net
+URL:		http://www.musepack.net/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -24,12 +24,21 @@ but since 1997 it has rapidly developed and vastly improved and is now
 at an advanced stage in which it contains heavily optimized and
 patentless code.
 
-##%description -l pl
+%description -l pl
+Ta biblioteka obs³uguje dekodowanie formatu MPC, który jest formatem
+kompresji d¼wiêku z naciskiem na wysok± jako¶æ. Nie jest bezstratny,
+ale jest zaprojektowany dla przezroczysto¶ci, tak, ¿e nie mo¿na
+us³yszeæ ró¿nicy miêdzy oryginalnym plikiem wave a du¿o mniejszym
+plikiem MPC. Jest oparty na algorytmach MPEG-1 Layer-2 / MP2, ale od
+1997 roku zosta³ znacznie rozwiniêty i ulepszony, a teraz jest w
+zaawansowanym stadium, w którym zawiera silnie zoptymalizowany i nie
+objêty patentami kod.
 
 %package devel
 Summary:	Header files for libmpcdec
 Summary(pl):	Pliki nag³ówkowe do biblioteki libmpcdec
-Group:		Development
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libmpcdec.
@@ -38,15 +47,16 @@ Header files for libmpcdec.
 Pliki nag³ówkowe do biblioteki libmpcdec.
 
 %package static
-Summary:	Statically linked version of the libmpcdec library
-Summary(pl):	Statycznie zlinkowana wersja biblioteki libmpcdec
-Group:		Libraries
+Summary:	Static version of the libmpcdec library
+Summary(pl):	Statyczna wersja biblioteki libmpcdec
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Statically linked version of the libmpcdec library.
+Static version of the libmpcdec library.
 
 %description static -l pl
-Statycznie zlinkowana wersja biblioteki libmpcdec.
+Statyczna wersja biblioteki libmpcdec.
 
 %package examples
 Summary:	Example of using libmpcdec with documentation
@@ -74,34 +84,34 @@ Przyk³ad u¿ycia libmpcdec z dokumentacj±.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install src/sample.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install src/sample.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
-%attr(755,root,root)  %{_libdir}/libmpcdec.so.*.*.*
+%attr(755,root,root) %{_libdir}/libmpcdec.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libmpcdec.so
+%{_libdir}/libmpcdec.la
 %{_includedir}/mpcdec
-%{_libdir}/libmpcdec.so
-
-%files examples
-%doc docs/html
-%defattr(644,root,root,755)
-%{_examplesdir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libmpcdec.a
-%{_libdir}/libmpcdec.la
+
+%files examples
+%doc docs/html
+%defattr(644,root,root,755)
+%{_examplesdir}/%{name}-%{version}
