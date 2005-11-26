@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	Musepack decoding library
 Summary(pl):	Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
@@ -11,6 +15,7 @@ URL:		http://www.musepack.net/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
+BuildRequires:	sed >= 4.0
 Obsoletes:	libmusepack
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +32,7 @@ patentless code.
 %description -l pl
 Ta biblioteka obs³uguje dekodowanie formatu MPC, który jest formatem
 kompresji d¼wiêku z naciskiem na wysok± jako¶æ. Nie jest bezstratny,
-ale jest zaprojektowany dla przezroczysto¶ci, tak, ¿e nie mo¿na
+ale jest zaprojektowany dla przezroczysto¶ci tak, ¿e nie mo¿na
 us³yszeæ ró¿nicy miêdzy oryginalnym plikiem wave a du¿o mniejszym
 plikiem MPC. Jest oparty na algorytmach MPEG-1 Layer-2 / MP2, ale od
 1997 roku zosta³ znacznie rozwiniêty i ulepszony, a teraz jest w
@@ -81,7 +86,8 @@ Przyk³ad u¿ycia libmpcdec z dokumentacj±.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -109,9 +115,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libmpcdec.la
 %{_includedir}/mpcdec
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libmpcdec.a
+%endif
 
 %files examples
 %doc docs/html
