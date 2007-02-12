@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Musepack decoding library
-Summary(pl):	Biblioteka do dekodowania formatu musepack
+Summary(pl.UTF-8):   Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
 Version:	1.2.2
 Release:	1
@@ -29,19 +29,19 @@ but since 1997 it has rapidly developed and vastly improved and is now
 at an advanced stage in which it contains heavily optimized and
 patentless code.
 
-%description -l pl
-Ta biblioteka obs³uguje dekodowanie formatu MPC, który jest formatem
-kompresji d¼wiêku z naciskiem na wysok± jako¶æ. Nie jest bezstratny,
-ale jest zaprojektowany dla przezroczysto¶ci tak, ¿e nie mo¿na
-us³yszeæ ró¿nicy miêdzy oryginalnym plikiem wave a du¿o mniejszym
+%description -l pl.UTF-8
+Ta biblioteka obsÅ‚uguje dekodowanie formatu MPC, ktÃ³ry jest formatem
+kompresji dÅºwiÄ™ku z naciskiem na wysokÄ… jakoÅ›Ä‡. Nie jest bezstratny,
+ale jest zaprojektowany dla przezroczystoÅ›ci tak, Å¼e nie moÅ¼na
+usÅ‚yszeÄ‡ rÃ³Å¼nicy miÄ™dzy oryginalnym plikiem wave a duÅ¼o mniejszym
 plikiem MPC. Jest oparty na algorytmach MPEG-1 Layer-2 / MP2, ale od
-1997 roku zosta³ znacznie rozwiniêty i ulepszony, a teraz jest w
-zaawansowanym stadium, w którym zawiera silnie zoptymalizowany i nie
-objêty patentami kod.
+1997 roku zostaÅ‚ znacznie rozwiniÄ™ty i ulepszony, a teraz jest w
+zaawansowanym stadium, w ktÃ³rym zawiera silnie zoptymalizowany i nie
+objÄ™ty patentami kod.
 
 %package devel
 Summary:	Header files for libmpcdec
-Summary(pl):	Pliki nag³ówkowe do biblioteki libmpcdec
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe do biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libmusepack-devel
@@ -49,12 +49,12 @@ Obsoletes:	libmusepack-devel
 %description devel
 Header files for libmpcdec.
 
-%description devel -l pl
-Pliki nag³ówkowe do biblioteki libmpcdec.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe do biblioteki libmpcdec.
 
 %package static
 Summary:	Static version of the libmpcdec library
-Summary(pl):	Statyczna wersja biblioteki libmpcdec
+Summary(pl.UTF-8):   Statyczna wersja biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libmusepack-static
@@ -62,19 +62,19 @@ Obsoletes:	libmusepack-static
 %description static
 Static version of the libmpcdec library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki libmpcdec.
 
 %package examples
 Summary:	Example of using libmpcdec with documentation
-Summary(pl):	Przyk³ad u¿ycia libmpcdec z dokumentacj±
+Summary(pl.UTF-8):   PrzykÅ‚ad uÅ¼ycia libmpcdec z dokumentacjÄ…
 Group:		Documentation
 
 %description examples
 Example of using libmpcdec with documentation.
 
-%description examples -l pl
-Przyk³ad u¿ycia libmpcdec z dokumentacj±.
+%description examples -l pl.UTF-8
+PrzykÅ‚ad uÅ¼ycia libmpcdec z dokumentacjÄ….
 
 %prep
 %setup -q
