@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Musepack decoding library
-Summary(pl.UTF-8):   Biblioteka do dekodowania formatu musepack
+Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
 Version:	1.2.2
 Release:	1
@@ -41,7 +41,7 @@ objęty patentami kod.
 
 %package devel
 Summary:	Header files for libmpcdec
-Summary(pl.UTF-8):   Pliki nagłówkowe do biblioteki libmpcdec
+Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libmusepack-devel
@@ -54,7 +54,7 @@ Pliki nagłówkowe do biblioteki libmpcdec.
 
 %package static
 Summary:	Static version of the libmpcdec library
-Summary(pl.UTF-8):   Statyczna wersja biblioteki libmpcdec
+Summary(pl.UTF-8):	Statyczna wersja biblioteki libmpcdec
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libmusepack-static
@@ -67,7 +67,7 @@ Statyczna wersja biblioteki libmpcdec.
 
 %package examples
 Summary:	Example of using libmpcdec with documentation
-Summary(pl.UTF-8):   Przykład użycia libmpcdec z dokumentacją
+Summary(pl.UTF-8):	Przykład użycia libmpcdec z dokumentacją
 Group:		Documentation
 
 %description examples
