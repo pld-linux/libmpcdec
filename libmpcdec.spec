@@ -5,12 +5,12 @@
 Summary:	Musepack decoding library
 Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
-Version:	1.2.2
+Version:	1.2.6
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://files2.musepack.net/source/%{name}-%{version}.tar.bz2
-# Source0-md5:	f14e07285b9b102a806649074c1d779b
+# Source0-md5:	7f7a060e83b4278acf4b77d7a7b9d2c0
 URL:		http://www.musepack.net/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -108,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/libmpcdec.so.*.*.*
+%Ghost %{_libdir}/libmpcdec.so.5
 
 %files devel
 %defattr(644,root,root,755)
@@ -122,6 +123,5 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %files examples
-%doc docs/html
 %defattr(644,root,root,755)
 %{_examplesdir}/%{name}-%{version}
