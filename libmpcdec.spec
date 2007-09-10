@@ -6,7 +6,7 @@ Summary:	Musepack decoding library
 Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
 Version:	1.2.6
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries
 Source0:	http://files2.musepack.net/source/%{name}-%{version}.tar.bz2
