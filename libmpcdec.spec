@@ -6,11 +6,12 @@ Summary:	Musepack decoding library
 Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack
 Name:		libmpcdec
 Version:	1.2.6
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
 Source0:	http://files2.musepack.net/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f7a060e83b4278acf4b77d7a7b9d2c0
+Patch0:		ac.patch
 URL:		http://www.musepack.net/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -78,6 +79,7 @@ Przykład użycia libmpcdec z dokumentacją.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{?debug:%{__sed} -i -e "s,-O3 -fomit-frame-pointer,,g" configure.ac}

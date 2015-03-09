@@ -1,0 +1,10 @@
+--- libmpcdec-1.2.6/configure.ac~	2007-04-17 21:05:32.000000000 +0200
++++ libmpcdec-1.2.6/configure.ac	2015-03-09 19:00:40.429162006 +0100
+@@ -4,6 +4,7 @@
+ AM_INIT_AUTOMAKE(libmpcdec,1.2.6)
+ AM_CONFIG_HEADER(include/config.h)
+ 
++AC_PROG_CXX
+ AM_PROG_LIBTOOL
+ 
+ CFLAGS="$CFLAGS -O3 -fomit-frame-pointer -fPIC"
