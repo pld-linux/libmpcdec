@@ -9,10 +9,10 @@ Version:	1.2.6
 Release:	4
 License:	BSD
 Group:		Libraries
-Source0:	http://files2.musepack.net/source/%{name}-%{version}.tar.bz2
+Source0:	http://files.musepack.net/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f7a060e83b4278acf4b77d7a7b9d2c0
 Patch0:		ac.patch
-URL:		http://www.musepack.net/
+URL:		https://www.musepack.net/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
