@@ -10,7 +10,7 @@ Release:	4
 License:	BSD
 Group:		Libraries
 #Source0Download: https://www.musepack.net/index.php?pg=src
-Source0:	http://files.musepack.net/source/%{name}-%{version}.tar.bz2
+Source0:	https://files.musepack.net/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f7a060e83b4278acf4b77d7a7b9d2c0
 Patch0:		ac.patch
 URL:		https://www.musepack.net/
