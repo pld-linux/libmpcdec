@@ -2,19 +2,20 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-Summary:	Musepack decoding library
-Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack
+Summary:	Musepack SV7 decoding library
+Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack SV7
 Name:		libmpcdec
 Version:	1.2.6
 Release:	4
 License:	BSD
 Group:		Libraries
+#Source0Download: https://www.musepack.net/index.php?pg=src
 Source0:	http://files.musepack.net/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f7a060e83b4278acf4b77d7a7b9d2c0
 Patch0:		ac.patch
 URL:		https://www.musepack.net/
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	sed >= 4.0
 Obsoletes:	libmusepack
@@ -30,6 +31,8 @@ but since 1997 it has rapidly developed and vastly improved and is now
 at an advanced stage in which it contains heavily optimized and
 patentless code.
 
+This library handles SV7 (StreamVersion7) format.
+
 %description -l pl.UTF-8
 Ta biblioteka obsługuje dekodowanie formatu MPC, który jest formatem
 kompresji dźwięku z naciskiem na wysoką jakość. Nie jest bezstratny,
@@ -39,6 +42,8 @@ plikiem MPC. Jest oparty na algorytmach MPEG-1 Layer-2 / MP2, ale od
 1997 roku został znacznie rozwinięty i ulepszony, a teraz jest w
 zaawansowanym stadium, w którym zawiera silnie zoptymalizowany i nie
 objęty patentami kod.
+
+Ta biblioteka obsługuje format SV7 (StreamVersion7).
 
 %package devel
 Summary:	Header files for libmpcdec
@@ -98,7 +103,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install src/sample.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -p src/sample.cpp $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -110,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/libmpcdec.so.*.*.*
-%ghost %{_libdir}/libmpcdec.so.5
+%attr(755,root,root) %ghost %{_libdir}/libmpcdec.so.5
 
 %files devel
 %defattr(644,root,root,755)
