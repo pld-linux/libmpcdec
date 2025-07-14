@@ -84,7 +84,7 @@ Przykład użycia libmpcdec z dokumentacją.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{?debug:%{__sed} -i -e "s,-O3 -fomit-frame-pointer,,g" configure.ac}
