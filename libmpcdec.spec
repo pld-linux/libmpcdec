@@ -6,7 +6,7 @@ Summary:	Musepack SV7 decoding library
 Summary(pl.UTF-8):	Biblioteka do dekodowania formatu musepack SV7
 Name:		libmpcdec
 Version:	1.2.6
-Release:	4
+Release:	5
 License:	BSD
 Group:		Libraries
 #Source0Download: https://www.musepack.net/index.php?pg=src
